@@ -96,17 +96,17 @@ void setup(){
     /* set font type and size */
     f = createFont("Arial", 16, true);
 
-    haplyBoard = new Board(this, Serial.list()[0], 0);
+    haplyBoard = new Board(this, Serial.list()[2], 0);
     widgetOne = new Device(widgetOneID, haplyBoard);
     pantograph = new Pantograph();
     
     widgetOne.set_mechanism(pantograph);
 
-    widgetOne.add_actuator(1, CCW, 2);
+    widgetOne.add_actuator(1, CW, 2);
     widgetOne.add_actuator(2, CW, 1);
     
-    widgetOne.add_encoder(1, CCW, 241, 10752, 2);
-    widgetOne.add_encoder(2, CW, -61, 10752, 1);
+    widgetOne.add_encoder(1, CCW, 241, 4096, 2);
+    widgetOne.add_encoder(2, CCW, -61, 4096, 1);
     
     widgetOne.device_set_parameters();
     
